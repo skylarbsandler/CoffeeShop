@@ -21,14 +21,15 @@ namespace CoffeeShop
             Items.Add(item);
         }
 
-        //public double Total()
-        //{
-        //    List<double> priceInCentsList = new List<double>();
-        //    foreach (Item item in Items)
-        //    {
-        //        double sum =+ item.PriceInCents;
-        //    }
-        //    return sum;
-        //}
+        public double Total()
+        {
+            List<double> priceInCentsList = new List<double>();
+            foreach (Item item in Items)
+            {
+                priceInCentsList.Add(item.PriceInCents);
+            }
+            var sumDollars = priceInCentsList.Sum();
+            return sumDollars / 100;
+        }
     }
 }
